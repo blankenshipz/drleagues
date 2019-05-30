@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @model.team_id %>
+</p>
+
+<p>
+  <strong>Virtual score:</strong>
+  <%= @model.virtual_score %>
+</p>
+
+<p>
+  <strong>Physical score:</strong>
+  <%= @model.physical_score %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @model.path %>
+</p>
+
+<%= link_to 'Edit', edit_model_path(@model) %> |
+<%= link_to 'Back', models_path %>
