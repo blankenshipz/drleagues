@@ -5,5 +5,5 @@
   <%= @team.name %>
 </p>
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+<a href="<%= edit_league_team_path(@league, @team) %>" button type="button" class="btn btn-primary">Edit</a>
+<a href="<%= league_teams_path %>" button type="button" class="btn btn-secondary">Back</a>

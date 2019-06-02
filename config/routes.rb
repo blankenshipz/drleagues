@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :models
-  resources :teams
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :leagues, only: [:show, :create, :edit, :new] do
+    resources :models
+    resources :teams
+  end
+
+  root 'leagues#index'
 end

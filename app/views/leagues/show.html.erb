@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @league.name %>
+</h1>
+
+</br>
+
+<h2>Submission deadline: <strong><%= @league.submission_deadline.in_time_zone("Eastern Time (US & Canada)")%></strong></h2>
+
+</br>
+
+<a href="<%= league_teams_path(@league) %>" button type="button" class="btn btn-primary">View the Competition</a>
+
+<%# <a href="<%= edit_league_path(@league) %1>" button type="button" class="btn btn-primary">Edit</a> %>

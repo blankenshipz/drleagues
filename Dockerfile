@@ -11,6 +11,8 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 
 RUN apt-get update && apt-get install -qq -y --no-install-recommends nodejs yarn postgresql-client
 
+RUN yarn install --check-files
+
 RUN mkdir /usr/src/app
 
 WORKDIR /usr/src/app

@@ -1,4 +1,5 @@
 class ModelsController < ApplicationController
+  before_action :set_league
   before_action :set_model, only: [:show, :edit, :update, :destroy]
 
   # GET /models
@@ -28,7 +29,7 @@ class ModelsController < ApplicationController
 
     respond_to do |format|
       if @model.save
-        format.html { redirect_to @model, notice: 'Model was successfully created.' }
+        format.html { redirect_to league_model_path(@league, @model), notice: 'Model was successfully created.' }
         format.json { render :show, status: :created, location: @model }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class ModelsController < ApplicationController
   def update
     respond_to do |format|
       if @model.update(model_params)
-        format.html { redirect_to @model, notice: 'Model was successfully updated.' }
+        format.html { redirect_to league_model_path(@league, @model), notice: 'Model was successfully created.' }
         format.json { render :show, status: :ok, location: @model }
       else
         format.html { render :edit }
@@ -62,6 +63,10 @@ class ModelsController < ApplicationController
   end
 
   private
+    def set_league
+      @league = League.find(params[:league_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_model
       @model = Model.find(params[:id])
@@ -69,6 +74,6 @@ class ModelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def model_params
-      params.require(:model).permit(:team_id, :virtual_score, :physical_score, :path)
+      params.require(:model).permit(:team_id, :name, :virtual_score, :physical_score, :package)
     end
 end

@@ -13,6 +13,9 @@ services:
       - postgres
     environment:
       - DATABASE_URL=postgres://postgres:@postgres/postgres
+      - ACCESS_KEY_ID=
+      - SECRET_ACCESS_KEY=
+      - STORAGE_BUCKET=
 
   postgres:
     image: "postgres:alpine"

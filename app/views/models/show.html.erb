@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+<strong>Name:</strong>
+  <%= @model.name %>
+</p>
+
+<p>
   <strong>Team:</strong>
-  <%= @model.team_id %>
+  <%= @model.team.name %>
 </p>
 
 <p>
@@ -15,10 +20,5 @@
   <%= @model.physical_score %>
 </p>
 
-<p>
-  <strong>Path:</strong>
-  <%= @model.path %>
-</p>
-
-<%= link_to 'Edit', edit_model_path(@model) %> |
-<%= link_to 'Back', models_path %>
+<a href="<%= edit_league_model_path(@league, @model) %>" button type="button" class="btn btn-primary">Edit</a>
+<a href="<%= league_models_path %>" button type="button" class="btn btn-secondary">Back</a>

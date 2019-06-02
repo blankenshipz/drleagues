@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  before_action :set_league
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
@@ -10,6 +11,9 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
+    puts 'hello'
+    puts @league
+    puts params
   end
 
   # GET /teams/new
@@ -24,11 +28,12 @@ class TeamsController < ApplicationController
   # POST /teams
   # POST /teams.json
   def create
-    @team = Team.new(team_params)
+    @league = League.find(params[:league_id])
+    @team = @league.teams.new(team_params)
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to @team, notice: 'Team was successfully created.' }
+        format.html { redirect_to league_team_path(@league, @team), notice: 'Team was successfully created.' }
         format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new }
@@ -42,7 +47,7 @@ class TeamsController < ApplicationController
   def update
     respond_to do |format|
       if @team.update(team_params)
-        format.html { redirect_to @team, notice: 'Team was successfully updated.' }
+        format.html { redirect_to league_team_path(@league, @team), notice: 'Team was successfully created.' }
         format.json { render :show, status: :ok, location: @team }
       else
         format.html { render :edit }
@@ -51,20 +56,14 @@ class TeamsController < ApplicationController
     end
   end
 
-  # DELETE /teams/1
-  # DELETE /teams/1.json
-  def destroy
-    @team.destroy
-    respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
+    def set_league
+      @league = League.find(params[:league_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_team
-      @team = Team.find(params[:id])
+      @team = @league.teams.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
