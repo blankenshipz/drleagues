@@ -14,4 +14,12 @@
  *= require_self
  */
 
-@import "bootstrap";
+// @import "bootstrap";
+
+body {
+  min-height: 75rem;
+  background-image: asset_url("race.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

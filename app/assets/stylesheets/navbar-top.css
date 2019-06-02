@@ -1,8 +1,0 @@
-/* Show it's not fixed to the top */
-body {
-  min-height: 75rem;
-  background-image: url("/assets/race.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
