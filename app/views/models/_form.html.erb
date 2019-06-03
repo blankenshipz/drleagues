@@ -18,7 +18,7 @@
 
   <div class="form-group">
     <%= form.label :team_id %>
-    <% if @model.team.present? %>
+    <% if @model.new_record? %>
       <%= form.select(
         :team_id,
         options_for_select(@league.teams.map{ |t| [t.name, t.id]}),
