@@ -12,7 +12,7 @@ class Model < ApplicationRecord
 
   def unique_file_upload
     if file_already_uploaded?
-      errors.add(:model, 'a file with this checksum has been seen before; please upload a new model')
+      errors.add(:model, 'with this checksum has been seen before; please upload a new model')
     end
   end
 
