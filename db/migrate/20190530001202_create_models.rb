@@ -3,7 +3,7 @@ class CreateModels < ActiveRecord::Migration[6.0]
     create_table :models do |t|
       t.references :team, null: false, foreign_key: true
       t.float :virtual_score, null: false
-      t.float :physical_score, null: false, default: 0.0
+      t.float :physical_score, null: true
       t.text :name, null: false
 
       t.timestamps

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_02_203237) do
+ActiveRecord::Schema.define(version: 2019_06_03_010406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_06_02_203237) do
   create_table "models", force: :cascade do |t|
     t.bigint "team_id", null: false
     t.float "virtual_score", null: false
-    t.float "physical_score", default: 0.0, null: false
+    t.float "physical_score"
     t.text "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2019_06_02_203237) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "top_model_id"
     t.index ["league_id"], name: "index_teams_on_league_id"
     t.index ["name", "league_id"], name: "index_teams_on_name_and_league_id", unique: true
   end
@@ -66,4 +67,5 @@ ActiveRecord::Schema.define(version: 2019_06_02_203237) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "models", "teams"
   add_foreign_key "teams", "leagues"
+  add_foreign_key "teams", "models", column: "top_model_id"
 end
