@@ -1,7 +1,7 @@
 class Model < ApplicationRecord
   has_one_attached :package
 
-  default_scope { order(physical_score: :desc, virtual_score: :desc) }
+  default_scope { order(physical_score: :asc, virtual_score: :asc) }
 
   belongs_to :team
 
