@@ -3,15 +3,31 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Name</th>
       <th scope="col">Rank</th>
+      <th scope="col">Name</th>
+      <th scope="col">Physical Score</th>
+      <th scope="col">Vritual Score</th>
+      <th scope="col">Top Model</th>
+      <th scope="col">Download</th>
     </tr>
   </thead>
   <tbody>
-  <% @teams.each do |team| %>
+  <% @teams.each_with_index do |team, index| %>
     <tr>
+      <td><%= "#{index + 1}" %></td>
       <td><%= link_to team.name, edit_league_team_path(@league, team) %></td>
-      <td>??????</td>
+
+      <% if team.top_model.present? %>
+        <td><%= team.top_model.physical_score %></td>
+        <td><%= team.top_model.virtual_score %></td>
+        <td><%= link_to team.top_model.name, league_model_path(@league, team.top_model) %></td>
+        <td><a href="<%= rails_blob_path(team.top_model.package, disposition: 'attachment')%>" button type="button" class="btn btn-secondary">Download</a></td>
+      <% else %>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+      <% end %>
     </tr>
   <% end %>
   </tbody>

@@ -5,20 +5,17 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    @teams = Team.all
+    @teams = @league.teams_by_top_model
   end
 
   # GET /teams/1
   # GET /teams/1.json
   def show
-    puts 'hello'
-    puts @league
-    puts params
   end
 
   # GET /teams/new
   def new
-    @team = Team.new
+    @team = @league.teams.new
   end
 
   # GET /teams/1/edit

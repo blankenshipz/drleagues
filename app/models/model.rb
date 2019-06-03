@@ -11,7 +11,6 @@ class Model < ApplicationRecord
   validates :physical_score, numericality: true, allow_nil: true
   validates_presence_of :name, :virtual_score, :team_id
   validate :unique_file_upload
-  validates :package, attached: true
 
   def unique_file_upload
     if file_already_uploaded?
