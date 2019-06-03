@@ -1,24 +1,17 @@
-# README
+# DRL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A rails application to manage Deep Racer Leagues
 
-Things you may want to cover:
 
-* Ruby version
+## Getting up and running
 
-* System dependencies
+This project uses `docker-compose`
 
-* Configuration
+```bash
+docker-compose run --rm web ./bin/setup # Runs migrations etc
+docker-compose up                       # Launches the webservice
 
-* Database creation
+open http://localhost:3000              # Open the website in a browser
+```
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
