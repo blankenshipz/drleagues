@@ -26,13 +26,13 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :virtual_score %>
+    <%= form.label 'Virtual score (minutes as a decimal)' %>
     <%= form.text_field :virtual_score, class: 'form-control' %>
   </div>
 
   <% if !model.new_record? %>
     <div class="form-group">
-      <%= form.label :physical_score %>
+      <%= form.label 'Physical score (minutes as a decimal)' %>
       <%= form.text_field :physical_score, class: 'form-control' %>
     </div>
   <% end %>
