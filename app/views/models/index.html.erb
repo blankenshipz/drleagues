@@ -17,7 +17,7 @@
         <td><%= model.team.name %></td>
         <td><%= model.virtual_score %></td>
         <td><%= model.physical_score %></td>
-        <td><a href="<%= rails_blob_path(model.package, disposition: 'attachment')%>" button type="button" class="btn btn-secondary">Download </a></td>
+        <td><a href="<%= rails_blob_path(model.package, disposition: 'attachment')%>" role="button" class="btn btn-secondary">Download </a></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +25,4 @@
 
 <br>
 
-<a href="<%= new_league_model_path %>" button type="button" class="btn btn-primary">Upload Model</a>
+<a href="<%= new_league_model_path %>" role="button" class="btn btn-primary">Upload Model</a>

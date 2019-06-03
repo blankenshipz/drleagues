@@ -22,9 +22,9 @@
     <%= form.submit 'Create', class: 'btn btn-primary' %>
 
     <% if @team.new_record? %>
-      <a href="<%= league_teams_path(@league) %>" button type="button" class="btn btn-secondary">Back</a>
+      <a href="<%= league_teams_path(@league) %>" role="button" class="btn btn-secondary">Back</a>
     <% else %>
-      <a href="<%= league_team_path(@league, @team) %>" button type="button" class="btn btn-secondary">Back</a>
+      <a href="<%= league_team_path(@league, @team) %>" role="button" class="btn btn-secondary">Back</a>
     <% end %>
   </div>
 <% end %>

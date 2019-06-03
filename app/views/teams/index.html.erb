@@ -21,7 +21,7 @@
         <td><%= team.top_model.physical_score %></td>
         <td><%= team.top_model.virtual_score %></td>
         <td><%= link_to team.top_model.name, league_model_path(@league, team.top_model) %></td>
-        <td><a href="<%= rails_blob_path(team.top_model.package, disposition: 'attachment')%>" button type="button" class="btn btn-secondary">Download</a></td>
+        <td><a href="<%= rails_blob_path(team.top_model.package, disposition: 'attachment')%>" role="button" class="btn btn-secondary">Download</a></td>
       <% else %>
         <td>N/A</td>
         <td>N/A</td>
@@ -35,4 +35,4 @@
 
 <br>
 
-<a href="<%= new_league_team_path %>" button type="button" class="btn btn-primary">Join the League</a>
+<a href="<%= new_league_team_path %>" role="button" class="btn btn-primary">Join the League</a>

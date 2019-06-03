@@ -55,8 +55,8 @@
     <%= form.submit 'Update', class: 'btn btn-primary' %>
 
     <% if @model.new_record? %>
-      <a href="<%= league_models_path(@league) %>" button type="button" class="btn btn-secondary">Back</a>
+      <a href="<%= league_models_path(@league) %>" role="button" class="btn btn-secondary">Back</a>
     <% else %>
-      <a href="<%= league_model_path(@league, @model) %>" button type="button" class="btn btn-secondary">Back</a>
+      <a href="<%= league_model_path(@league, @model) %>" role="button" class="btn btn-secondary">Back</a>
     <% end %>
 <% end %>
