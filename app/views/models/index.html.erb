@@ -6,6 +6,7 @@
       <th>Team</th>
       <th>Virtual score</th>
       <th>Physical score</th>
+      <th>Download</th>
     </tr>
   </thead>
 
@@ -16,6 +17,7 @@
         <td><%= model.team.name %></td>
         <td><%= model.virtual_score %></td>
         <td><%= model.physical_score %></td>
+        <td><a href="<%= rails_blob_path(model.package, disposition: 'attachment')%>" button type="button" class="btn btn-secondary">Download </a></td>
       </tr>
     <% end %>
   </tbody>
