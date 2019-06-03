@@ -20,7 +20,7 @@
     <%= form.label :team_id %>
     <%= form.select(
       :team_id,
-      options_for_select(@league.teams.map{ |t| [t.name, t.id]}),
+      options_for_select(@league.teams.map{ |t| [t.name, t.id]}, selected: [@model.team.name, @model.team.id]),
       { include_blank: true },
       class: 'form-control') %>
   </div>
