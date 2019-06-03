@@ -20,5 +20,6 @@
   <%= @model.physical_score %>
 </p>
 
-<a href="<%= edit_league_model_path(@league, @model) %>" button type="button" class="btn btn-primary">Edit</a>
 <a href="<%= league_models_path %>" button type="button" class="btn btn-secondary">Back</a>
+<a href="<%= edit_league_model_path(@league, @model) %>" button type="button" class="btn btn-primary">Edit</a>
+<a href="<%= rails_blob_path(@model.package, disposition: 'attachment')%>" button type="button" class="btn btn-success">Download </a>
