@@ -1,5 +1,5 @@
 class Model < ApplicationRecord
-  after_save :update_team_top_model
+  after_save :update_team_top_model, :update_package_name
   has_one_attached :package
 
   default_scope { order(physical_score: :asc, virtual_score: :asc) }
@@ -33,5 +33,13 @@ class Model < ApplicationRecord
     if (!(top.id == team.top_model_id)) || team.top_model_id.nil?
       team.update!(top_model_id: top.id)
     end
+  end
+
+  def update_package_name
+    package.blob.update(filename: expected_filename) if package.attached?
+  end
+
+  def expected_filename
+     "#{team.name.underscore}-#{name.underscore}.#{package.filename.extension}"
   end
 end
