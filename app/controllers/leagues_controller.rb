@@ -53,13 +53,13 @@ class LeaguesController < ApplicationController
 
   # DELETE /leagues/1
   # DELETE /leagues/1.json
-  def destroy
-    @league.destroy
-    respond_to do |format|
-      format.html { redirect_to leagues_url, notice: 'League was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @league.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to leagues_url, notice: 'League was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
