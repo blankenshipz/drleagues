@@ -1,9 +1,10 @@
 # DRL
 
-A rails application to manage Deep Racer Leagues
+[drleagues.io](http://www.drleagues.io)
 
+A rails application to manage private Deep Racer Leagues
 
-## Getting up and running
+## Getting up and running for local development
 
 This project uses `docker-compose`
 
