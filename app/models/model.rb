@@ -40,6 +40,6 @@ class Model < ApplicationRecord
   end
 
   def expected_filename
-     "#{team.name.underscore}-#{name.underscore}.#{package.filename.extension}"
+    "#{team.name.underscore}-#{name.underscore}.tar.gz".tr(" ", "_")
   end
 end
